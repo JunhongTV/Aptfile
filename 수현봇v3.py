@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 game = discord.Game("수현봇v3 아직 베타 버젼입니다! !Helps을 입력해주세요!")
@@ -35,5 +36,6 @@ async def on_message(message):
     if message.content == "!Papago":
         await message.author.send("https://papago.naver.com/")
         await message.channel.send(":regional_indicator_d: :regional_indicator_m:")
-        
-client.run("NjkwMDI1MDcyNTU5NTIxODMz.XnLaAQ.COl0AQFPN8ftKRJdrkx5neklID0")
+
+access_Token = os.environ["BOT_TOKEN"]
+client.run(access_Token)
